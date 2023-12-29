@@ -18,4 +18,9 @@ export default class UsersRepository {
         let result = await this.dao.createOne(obj);
         return result;
     }
+
+    getByEmail = async(email) => {
+        const response = await this.dao.findOne({ email });
+        return response;
+    }
 }
